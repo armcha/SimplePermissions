@@ -1,8 +1,9 @@
-package com.luseen.simplepermissions.permissions;
+package com.luseen.simplepermission.permissions;
 
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * Created by Chatikyan on 24.11.2016.
  */
 
-public abstract class PermissionFragment extends Fragment {
+public abstract class PermissionActivity extends AppCompatActivity {
 
     private static final int PERMISSION_REQUEST_CODE = 10;
 
@@ -29,13 +30,13 @@ public abstract class PermissionFragment extends Fragment {
             this.multiplePermissionCallback = multiplePermissionCallback;
 
             for (Permission permission : permissions) {
-                if (!PermissionUtils.isGranted(getActivity(), permission)) {
+                if (!PermissionUtils.isGranted(this, permission)) {
                     permissionsToRequest.add(permission.toString());
                 }
             }
 
             if (!permissionsToRequest.isEmpty()) {
-                requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
+                ActivityCompat.requestPermissions(this, permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
                         PERMISSION_REQUEST_CODE);
             }
         }
@@ -47,7 +48,7 @@ public abstract class PermissionFragment extends Fragment {
             this.singlePermissionCallback = singlePermissionCallback;
             permissionsToRequest.add(permission.toString());
             if (!permissionsToRequest.isEmpty()) {
-                requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
+                ActivityCompat.requestPermissions(this, permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
                         PERMISSION_REQUEST_CODE);
             }
         } else {
@@ -80,7 +81,7 @@ public abstract class PermissionFragment extends Fragment {
                     }
                 } else {
                     boolean permissionsDeniedForever =
-                            shouldShowRequestPermissionRationale(permissions[i]);
+                            ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i]);
                     if (permissionsToRequest.contains(permissions[i])) {
                         if (!permissionsDeniedForever) {
                             foreverDeniedPermissions.add(Permission.stringToPermission(permissions[i]));
@@ -95,8 +96,8 @@ public abstract class PermissionFragment extends Fragment {
                 multiplePermissionCallback.onPermissionGranted(allPermissionsGranted, grantedPermissions);
                 multiplePermissionCallback.onPermissionDenied(deniedPermissions, foreverDeniedPermissions);
             } else {
-                boolean permissionsDeniedForever = shouldShowRequestPermissionRationale(
-                        permissionsToRequest.get(0));
+                boolean permissionsDeniedForever = ActivityCompat.shouldShowRequestPermissionRationale(
+                        this, permissionsToRequest.get(0));
                 if (allPermissionsGranted)
                     permissionsDeniedForever = true;
                 Permission permission = Permission.stringToPermission(permissionsToRequest.get(0));

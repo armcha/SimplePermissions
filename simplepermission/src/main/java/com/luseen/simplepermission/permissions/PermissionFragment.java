@@ -1,9 +1,8 @@
-package com.luseen.simplepermissions.permissions;
+package com.luseen.simplepermission.permissions;
 
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +11,9 @@ import java.util.List;
  * Created by Chatikyan on 24.11.2016.
  */
 
-public abstract class PermissionActivity extends AppCompatActivity {
+public abstract class PermissionFragment extends Fragment {
 
-    private static final int PERMISSION_REQUEST_CODE = 10;
+    private static final int PERMISSION_REQUEST_CODE = 10 << 1;
 
     private List<String> permissionsToRequest = new ArrayList<>();
     private List<Permission> grantedPermissions = new ArrayList<>();
@@ -30,13 +29,13 @@ public abstract class PermissionActivity extends AppCompatActivity {
             this.multiplePermissionCallback = multiplePermissionCallback;
 
             for (Permission permission : permissions) {
-                if (!PermissionUtils.isGranted(this, permission)) {
+                if (!PermissionUtils.isGranted(getActivity(), permission)) {
                     permissionsToRequest.add(permission.toString());
                 }
             }
 
             if (!permissionsToRequest.isEmpty()) {
-                ActivityCompat.requestPermissions(this, permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
+                requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
                         PERMISSION_REQUEST_CODE);
             }
         }
@@ -48,7 +47,7 @@ public abstract class PermissionActivity extends AppCompatActivity {
             this.singlePermissionCallback = singlePermissionCallback;
             permissionsToRequest.add(permission.toString());
             if (!permissionsToRequest.isEmpty()) {
-                ActivityCompat.requestPermissions(this, permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
+                requestPermissions(permissionsToRequest.toArray(new String[permissionsToRequest.size()]),
                         PERMISSION_REQUEST_CODE);
             }
         } else {
@@ -81,7 +80,7 @@ public abstract class PermissionActivity extends AppCompatActivity {
                     }
                 } else {
                     boolean permissionsDeniedForever =
-                            ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[i]);
+                            shouldShowRequestPermissionRationale(permissions[i]);
                     if (permissionsToRequest.contains(permissions[i])) {
                         if (!permissionsDeniedForever) {
                             foreverDeniedPermissions.add(Permission.stringToPermission(permissions[i]));
@@ -96,8 +95,8 @@ public abstract class PermissionActivity extends AppCompatActivity {
                 multiplePermissionCallback.onPermissionGranted(allPermissionsGranted, grantedPermissions);
                 multiplePermissionCallback.onPermissionDenied(deniedPermissions, foreverDeniedPermissions);
             } else {
-                boolean permissionsDeniedForever = ActivityCompat.shouldShowRequestPermissionRationale(
-                        this, permissionsToRequest.get(0));
+                boolean permissionsDeniedForever = shouldShowRequestPermissionRationale(
+                        permissionsToRequest.get(0));
                 if (allPermissionsGranted)
                     permissionsDeniedForever = true;
                 Permission permission = Permission.stringToPermission(permissionsToRequest.get(0));

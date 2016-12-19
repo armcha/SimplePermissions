@@ -1,4 +1,4 @@
-package com.luseen.simplepermissions.permissions;
+package com.luseen.simplepermission.permissions;
 
 /**
  * Created by Chatikyan on 24.11.2016.

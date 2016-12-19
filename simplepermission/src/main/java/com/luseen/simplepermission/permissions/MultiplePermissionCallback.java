@@ -1,4 +1,4 @@
-package com.luseen.simplepermissions.permissions;
+package com.luseen.simplepermission.permissions;
 
 import java.util.List;
 

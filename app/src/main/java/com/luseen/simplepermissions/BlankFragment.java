@@ -2,14 +2,15 @@ package com.luseen.simplepermissions;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.luseen.simplepermissions.permissions.MultiplePermissionCallback;
-import com.luseen.simplepermissions.permissions.Permission;
-import com.luseen.simplepermissions.permissions.PermissionFragment;
+import com.luseen.simplepermission.permissions.MultiplePermissionCallback;
+import com.luseen.simplepermission.permissions.Permission;
+import com.luseen.simplepermission.permissions.PermissionFragment;
 
 import java.util.List;
 
