@@ -6,5 +6,5 @@ package com.luseen.simplepermission.permissions;
 
 public interface SinglePermissionCallback {
 
-    void onPermissionResult(Permission permission, boolean permissionGranted, boolean isPermissionForeverDenied);
+    void onPermissionResult(boolean permissionGranted, boolean isPermissionDeniedForever);
 }

@@ -1,6 +1,8 @@
 package com.luseen.simplepermission.permissions;
 
 import android.Manifest;
+import android.annotation.TargetApi;
+import android.os.Build;
 
 /**
  * Created by Chatikyan on 24.11.2016.

@@ -18,10 +18,9 @@ public class MainActivity extends PermissionActivity {
 
         requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
             @Override
-            public void onPermissionResult(Permission permission, boolean permissionGranted, boolean isPermissionForeverDenied) {
-                Log.d(TAG, "permission: " + permission);
+            public void onPermissionResult(boolean permissionGranted, boolean isPermissionDeniedForever) {
                 Log.d(TAG, "permissionGranted: " + permissionGranted);
-                Log.d(TAG, "isPermissionForeverDenied: " + isPermissionForeverDenied);
+                Log.d(TAG, "isPermissionDeniedForever: " + isPermissionDeniedForever);
             }
         });
     }

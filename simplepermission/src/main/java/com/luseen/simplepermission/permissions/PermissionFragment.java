@@ -99,8 +99,7 @@ public abstract class PermissionFragment extends Fragment {
                         permissionsToRequest.get(0));
                 if (allPermissionsGranted)
                     permissionsDeniedForever = true;
-                Permission permission = Permission.stringToPermission(permissionsToRequest.get(0));
-                singlePermissionCallback.onPermissionResult(permission, allPermissionsGranted, !permissionsDeniedForever);
+                singlePermissionCallback.onPermissionResult(allPermissionsGranted, !permissionsDeniedForever);
             }
             permissionsToRequest.clear();
         }
