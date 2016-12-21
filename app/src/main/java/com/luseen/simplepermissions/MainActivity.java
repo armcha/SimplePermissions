@@ -16,11 +16,11 @@ public class MainActivity extends PermissionActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
+        requestPermission(Permission.READ_SMS, new SinglePermissionCallback() {
             @Override
             public void onPermissionResult(boolean permissionGranted, boolean isPermissionDeniedForever) {
-                Log.d(TAG, "permissionGranted: " + permissionGranted);
-                Log.d(TAG, "isPermissionDeniedForever: " + isPermissionDeniedForever);
+                Log.d(TAG, "Permission granted = " + permissionGranted);
+                Log.d(TAG, "Permission denied forever = " + isPermissionDeniedForever);
             }
         });
     }

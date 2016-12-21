@@ -3,9 +3,10 @@
     package="com.luseen.simplepermissions">
 
     <uses-permission android:name="android.permission.CAMERA"/>
-    <!--<uses-permission android:name="android.permission.CALL_PHONE"/>-->
-    <!--<uses-permission android:name="android.permission.GET_ACCOUNTS"/>-->
-    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
 
     <application
         android:allowBackup="true"
