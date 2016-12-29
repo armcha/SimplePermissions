@@ -23,11 +23,17 @@ public class Fragment extends PermissionFragment
 ###Step 2. 
 ```java
 requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
-            @Override
-            public void onPermissionResult(boolean permissionGranted, boolean isPermissionDeniedForever) {
-
-            }
-        });
+                @Override
+                public void onPermissionResult(boolean permissionGranted, boolean isPermissionDeniedForever) {
+                    if (permissionGranted) {
+                        //Do your work
+                    } else if (isPermissionDeniedForever) {
+                        PermissionUtils.openApplicationSettings(context);
+                    } else {
+                        Toast.makeText(getActivity(), "Please grant permissions", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 ```
 
 ### Request multiple permissions
@@ -45,6 +51,17 @@ requestPermissions(permissions, new MultiplePermissionCallback() {
             }
         });
 ```
+
+## Permission utils
+1.
+```java
+PermissionUtils.openApplicationSettings(context);
+```
+2.
+```java
+PermissionUtils.isMarshmallowOrHigher()
+```
+
 
 ## Contact 
 
