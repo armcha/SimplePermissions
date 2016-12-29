@@ -1,5 +1,5 @@
 # SimplePermissions
-This library allows you easily impelement Android marshmallow permissions.
+This library allows you easily implement Android marshmallow permissions.
 #
 The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java)
 , if I miss any permission please add and send me pull request.
