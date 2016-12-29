@@ -9,9 +9,13 @@ compile 'com.github.armcha:SimplePermissions:1.0.0'
 ```
 
 ## How to use
-Step 1. Extend your activity/fragment from 
+Step 1. Extend your activity/fragment from PermissionActivity/PermissionFragment
 ```java
-PermissionActivity/PermissionFragment
+public class MainActivity extends PermissionActivity
+```
+or
+```java
+public class Fragment extends PermissionFragment
 ```
 
 Step 2. 
