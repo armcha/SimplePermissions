@@ -9,7 +9,7 @@ compile 'com.github.armcha:SimplePermissions:1.0.0'
 ```
 
 ## How to use
-Step 1. Extend your activity/fragment from PermissionActivity/PermissionFragment
+###Step 1. Extend your activity/fragment from PermissionActivity/PermissionFragment
 ```java
 public class MainActivity extends PermissionActivity
 ```
@@ -18,7 +18,7 @@ or
 public class Fragment extends PermissionFragment
 ```
 
-Step 2. 
+###Step 2. 
 ```java
 requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
             @Override
