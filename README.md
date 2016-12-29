@@ -53,11 +53,10 @@ requestPermissions(permissions, new MultiplePermissionCallback() {
 ```
 
 ## Permission utils
-1.
 ```java
 PermissionUtils.openApplicationSettings(context);
 ```
-2.
+
 ```java
 PermissionUtils.isMarshmallowOrHigher()
 ```
