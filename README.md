@@ -1,6 +1,7 @@
 # SimplePermissions
-
-Simple android marshmallow permissions
+This library allows you easily impelement Android marshmallow permission.
+The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java)
+if I miss any permission please send me pull request.
 
 
 ## Download
@@ -43,3 +44,35 @@ requestPermissions(permissions, new MultiplePermissionCallback() {
             }
         });
 ```
+
+## Contact 
+
+Pull requests are more than welcome.
+Please fell free to contact me if there is any problem when using the library.
+
+- **Email**: armcha01@gmail.com
+- **Facebook**: https://web.facebook.com/chatikyana
+- **Twitter**: https://twitter.com/ArmanChatikyan
+- **Google +**: https://plus.google.com/112011638040018774140
+- **Website**: http://luseen.com/
+
+License
+--------
+
+
+      SimplePermissions library for Android
+      Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/SimplePermissions).
+      
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
+    
+
