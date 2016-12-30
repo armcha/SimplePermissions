@@ -1,8 +1,7 @@
 # SimplePermissions
 This library allows you easily implement Android marshmallow permissions.
 #
-The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java)
-, if I miss any permission please add and send me pull request.
+The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java), if I miss any permission please add and send me pull request.
 
 
 ## Download
@@ -13,11 +12,11 @@ compile 'com.github.armcha:SimplePermissions:1.0.0'
 ## How to use
 ###Step 1. Extend your activity/fragment from PermissionActivity/PermissionFragment
 ```java
-public class MainActivity extends PermissionActivity
+public class MyActivity extends PermissionActivity
 ```
 or
 ```java
-public class Fragment extends PermissionFragment
+public class MyFragment extends PermissionFragment
 ```
 
 ###Step 2. 
