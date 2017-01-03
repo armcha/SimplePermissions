@@ -1,1 +1,1 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.luseen.simplepermission"/>
+<manifest package="com.luseen.simplepermission" />
