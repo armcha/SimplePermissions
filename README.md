@@ -3,7 +3,7 @@ This library allows you easily implement Android marshmallow permissions.
 #
 The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java), if I miss any permission please add and send me pull request.
 
-![](screen_and_apk/gif.gif)
+![](screen_and_apk/gif_en.gif)
 
 ## Download sample [apk][0]
 [0]: https://github.com/armcha/SimplePermissions/raw/master/screen_and_apk/SimplePermissions.apk
