@@ -24,6 +24,7 @@ public class MyFragment extends PermissionFragment
 ```
 
 ###Step 2. 
+#### Request single permission
 ```java
 requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
                 @Override
@@ -33,13 +34,13 @@ requestPermission(Permission.CAMERA, new SinglePermissionCallback() {
                     } else if (isPermissionDeniedForever) {
                         PermissionUtils.openApplicationSettings(context);
                     } else {
-                        Toast.makeText(getActivity(), "Please grant permissions", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Please grant permissions", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 ```
 
-### Request multiple permissions
+#### Request multiple permissions
 ```java
 Permission[] permissions = {Permission.CALL_PHONE, Permission.SEND_SMS, Permission.FINE_LOCATION};
 requestPermissions(permissions, new MultiplePermissionCallback() {
@@ -81,7 +82,7 @@ License
 
 
       SimplePermissions library for Android
-      Copyright (c) 2016 Arman Chatikyan (https://github.com/armcha/SimplePermissions).
+      Copyright (c) 2017 Arman Chatikyan (https://github.com/armcha/SimplePermissions).
       
       Licensed under the Apache License, Version 2.0 (the "License");
       you may not use this file except in compliance with the License.
