@@ -1,5 +1,5 @@
 # SimplePermissions
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Space--Navigation--View-green.svg?style=true)](https://android-arsenal.com/details/1/5009)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal- Simple--Permissions-green.svg?style=true)](https://android-arsenal.com/details/1/5009)
 ####This library allows you easily implement Android marshmallow permissions.
 #
 The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/master/simplepermission/src/main/java/com/luseen/simplepermission/permissions/Permission.java), if I miss any permission please add and send me pull request.
