@@ -11,6 +11,14 @@ The list of [permisisons](https://github.com/armcha/SimplePermissions/blob/maste
 
 ## Download
 ```groovy
+repositories {
+    maven {
+        url 'https://dl.bintray.com/armcha/maven'
+    }
+}
+```
+
+```groovy
 compile 'com.github.armcha:SimplePermissions:1.0.0'
 ```
 
